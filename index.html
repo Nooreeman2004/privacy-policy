@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAAMP – Privacy Policy</title>
+  <meta name="description" content="Read the Privacy Policy for RAAMP – Revolutionary AI-Powered Autonomous Marketing Platform. Effective 21 April 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Design Tokens ─────────────────────────────────────────────────── */
+    :root {
+      --bg:           #0a0d14;
+      --bg-card:      #0f1320;
+      --bg-glass:     rgba(255,255,255,0.04);
+      --border-glass: rgba(255,255,255,0.08);
+      --primary:      #6d5aff;
+      --primary-glow: rgba(109,90,255,0.25);
+      --foreground:   #f0f2ff;
+      --muted:        #8b94b0;
+      --text-body:    #c5cce0;
+      --accent:       #a78bfa;
+      --danger:       #ff6b6b;
+      --success:      #34d399;
+    }
+
+    /* ─── Reset & Base ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text-body);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── Animated Background ───────────────────────────────────────────── */
+    .bg-mesh {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 60% at 15% 10%, rgba(109,90,255,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 85% 80%, rgba(167,139,250,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(10,13,20,0) 0%, var(--bg) 100%);
+    }
+
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.18;
+      pointer-events: none;
+      animation: drift 18s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    .bg-orb-1 { width: 500px; height: 500px; background: var(--primary); top: -120px; left: -100px; animation-duration: 20s; }
+    .bg-orb-2 { width: 400px; height: 400px; background: var(--accent); bottom: -80px; right: -80px; animation-duration: 24s; animation-direction: alternate-reverse; }
+
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(40px, 30px) scale(1.05); }
+    }
+
+    /* ─── Layout ────────────────────────────────────────────────────────── */
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ─── Back Link ─────────────────────────────────────────────────────── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      padding: 0.35rem 0.75rem 0.35rem 0.5rem;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      opacity: 0;
+      transform: translateY(-8px);
+      animation: fadeSlideDown 0.5s 0.1s ease forwards;
+    }
+    .back-link:hover {
+      background: var(--bg-glass);
+      border-color: var(--border-glass);
+      color: var(--accent);
+    }
+    .back-link svg { transition: transform 0.2s ease; }
+    .back-link:hover svg { transform: translateX(-3px); }
+
+    /* ─── Header ────────────────────────────────────────────────────────── */
+    .page-header { margin-bottom: 2.5rem; }
+
+    .page-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--foreground);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 0.6s 0.2s ease forwards;
+    }
+
+    .title-gradient {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .effective-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 400;
+      opacity: 0;
+      animation: fadeIn 0.6s 0.35s ease forwards;
+    }
+
+    /* ─── Table of Contents ─────────────────────────────────────────────── */
+    .toc {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(16px);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.6s 0.4s ease forwards;
+    }
+    .toc-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.4rem 1rem;
+    }
+    .toc-list a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .toc-list a::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+    .toc-list a:hover { color: var(--primary); }
+
+    /* ─── Main Card ─────────────────────────────────────────────────────── */
+    .terms-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 2.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.7s 0.5s ease forwards;
+    }
+
+    /* ─── Sections ──────────────────────────────────────────────────────── */
+    .terms-section {
+      padding-bottom: 2.5rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-glass);
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .terms-section:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .terms-section.visible { opacity: 1; transform: translateY(0); }
+
+    .section-number {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(109,90,255,0.12);
+      border: 1px solid rgba(109,90,255,0.3);
+      border-radius: 6px;
+      padding: 0.15rem 0.55rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 1.75rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 0.9rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ─── Lists ─────────────────────────────────────────────────────────── */
+    .terms-list {
+      list-style: none;
+      margin: 0.75rem 0 1rem 0;
+    }
+    .terms-list li {
+      position: relative;
+      padding: 0.45rem 0 0.45rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      font-size: 0.95rem;
+    }
+    .terms-list li:last-child { border-bottom: none; }
+    .terms-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+
+    /* ─── Callout Boxes ─────────────────────────────────────────────────── */
+    .callout {
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      border-left: 3px solid;
+    }
+    .callout-warning {
+      background: rgba(255,107,107,0.06);
+      border-color: var(--danger);
+      color: #ffb3b3;
+    }
+    .callout-info {
+      background: rgba(109,90,255,0.07);
+      border-color: var(--primary);
+      color: var(--text-body);
+    }
+    .callout-success {
+      background: rgba(52,211,153,0.06);
+      border-color: var(--success);
+      color: #a7f3d0;
+    }
+    .callout-title {
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ─── Retention Table ───────────────────────────────────────────────── */
+    .retention-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .retention-table th {
+      text-align: left;
+      padding: 0.65rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border-glass);
+    }
+    .retention-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      vertical-align: top;
+    }
+    .retention-table tr:last-child td { border-bottom: none; }
+    .retention-table .data-type {
+      color: var(--foreground);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .retention-table .period {
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* ─── Third-Party Grid ──────────────────────────────────────────────── */
+    .provider-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    .provider-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .provider-card:hover {
+      border-color: rgba(109,90,255,0.35);
+      background: rgba(109,90,255,0.06);
+    }
+    .provider-name {
+      font-weight: 700;
+      color: var(--foreground);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+    .provider-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .provider-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.1rem 0.45rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      background: rgba(109,90,255,0.15);
+      color: var(--primary);
+      border: 1px solid rgba(109,90,255,0.25);
+    }
+    .provider-tag.dev {
+      background: rgba(255,107,107,0.1);
+      color: #ff9f9f;
+      border-color: rgba(255,107,107,0.25);
+    }
+
+    /* ─── Contact Box ───────────────────────────────────────────────────── */
+    .contact-box {
+      background: rgba(109,90,255,0.08);
+      border: 1px solid rgba(109,90,255,0.25);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1rem;
+    }
+    .contact-box .label {
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+    .contact-box a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .contact-box a:hover { color: var(--accent); text-decoration: underline; }
+
+    /* ─── Rights Row ─────────────────────────────────────────────────────── */
+    .rights-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0;
+    }
+    .right-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(52,211,153,0.07);
+      border: 1px solid rgba(52,211,153,0.2);
+      border-radius: 50px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.82rem;
+      color: #6ee7b7;
+      font-weight: 500;
+    }
+    .right-badge svg { flex-shrink: 0; }
+
+    /* ─── Footer Banner ─────────────────────────────────────────────────── */
+    .terms-footer {
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--border-glass);
+      text-align: center;
+    }
+    .terms-footer p {
+      font-size: 0.825rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ─── Back to Top ───────────────────────────────────────────────────── */
+    .back-top-wrap { margin-top: 2.5rem; text-align: center; }
+
+    #backToTop {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-family: inherit;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(12px);
+    }
+    #backToTop:hover {
+      background: rgba(109,90,255,0.15);
+      border-color: var(--primary);
+      color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(109,90,255,0.2);
+    }
+
+    /* ─── Keyframe Animations ───────────────────────────────────────────── */
+    @keyframes fadeSlideDown {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeSlideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* ─── Progress Bar ──────────────────────────────────────────────────── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      z-index: 999;
+      transition: width 0.1s linear;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* ─── Scrollbar ─────────────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(109,90,255,0.4); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+    /* ─── Selection ─────────────────────────────────────────────────────── */
+    ::selection { background: rgba(109,90,255,0.35); color: var(--foreground); }
+
+    /* ─── Responsive ────────────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .page-wrapper { padding: 2rem 1rem 4rem; }
+      .terms-card { padding: 1.5rem; }
+      .toc { padding: 1.25rem; }
+      .toc-list { grid-template-columns: 1fr 1fr; }
+      .provider-grid { grid-template-columns: 1fr; }
+      .retention-table { font-size: 0.82rem; }
+      .retention-table th,
+      .retention-table td { padding: 0.55rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reading progress bar -->
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- Decorative background -->
+  <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
+
+  <main class="page-wrapper">
+
+    <!-- Back link -->
+    <a href="#" class="back-link" onclick="history.back(); return false;" aria-label="Go back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Back
+    </a>
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <h1 class="page-title">Privacy <span class="title-gradient">Policy</span></h1>
+      <p class="effective-date">Effective Date: 21 April 2026</p>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="toc" aria-label="Table of contents">
+      <p class="toc-title">Contents</p>
+      <ol class="toc-list">
+        <li><a href="#s1">1. Information We Collect</a></li>
+        <li><a href="#s2">2. How We Use Your Information</a></li>
+        <li><a href="#s3">3. Data Sharing &amp; Disclosure</a></li>
+        <li><a href="#s4">4. Data Storage &amp; Security</a></li>
+        <li><a href="#s5">5. Data Retention</a></li>
+        <li><a href="#s6">6. Third-Party Services</a></li>
+        <li><a href="#s7">7. Your Rights</a></li>
+        <li><a href="#s8">8. Children's Privacy</a></li>
+        <li><a href="#s9">9. Changes to This Policy</a></li>
+        <li><a href="#s10">10. Contact</a></li>
+      </ol>
+    </nav>
+
+    <!-- Policy Card -->
+    <article class="terms-card">
+
+      <!-- Intro -->
+      <div class="terms-section" id="s-intro" style="padding-bottom:1.75rem; margin-bottom:1.75rem;">
+        <p>
+          <strong style="color:var(--foreground)">RAAMP</strong> ("we", "our", or "us") respects your privacy and is committed to protecting
+          your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our
+          application and related services (the "Service").
+        </p>
+      </div>
+
+      <!-- Section 1 -->
+      <section class="terms-section" id="s1">
+        <span class="section-number">Section 01</span>
+        <h2 class="section-h2">1. Information We Collect</h2>
+        <p>We may collect the following types of information:</p>
+
+        <h3 class="section-h3">a) Account Information</h3>
+        <ul class="terms-list">
+          <li>Name and email address you provide during signup</li>
+          <li>Password (stored as a secure hash — never in plain text)</li>
+        </ul>
+
+        <h3 class="section-h3">b) Connected Platform Data — Meta / Instagram / Facebook (optional)</h3>
+        <p>
+          If you connect your Instagram Business account or Facebook Page to RAAMP, we may store:
+        </p>
+        <ul class="terms-list">
+          <li>Account/Page identifiers (e.g., Page ID, IG Business ID)</li>
+          <li>Access tokens (stored securely and never exposed publicly)</li>
+          <li>Comment/post identifiers and webhook event metadata needed to deliver enabled features (e.g., auto-replies) and maintain auditability</li>
+        </ul>
+        <div class="callout callout-info">
+          <p class="callout-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Optional Integration
+          </p>
+          Connecting your Meta / Instagram / Facebook account is entirely optional. You can disconnect at any time from within your account settings, and associated tokens will be deleted immediately.
+        </div>
+
+        <h3 class="section-h3">c) Usage and Technical Data</h3>
+        <ul class="terms-list">
+          <li>Basic activity logs (feature usage, timestamps) and error diagnostics</li>
+          <li>Device/browser information and IP address (for security and troubleshooting)</li>
+        </ul>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="terms-section" id="s2">
+        <span class="section-number">Section 02</span>
+        <h2 class="section-h2">2. How We Use Your Information</h2>
+        <p>We use your information to:</p>
+        <ul class="terms-list">
+          <li>Provide and operate RAAMP's services</li>
+          <li>Enable integrations you choose to connect — for example, to receive comment events via webhooks and post auto-replies when that feature is enabled</li>
+          <li>Monitor performance, troubleshoot issues, and prevent misuse</li>
+          <li>Maintain security and integrity of the Service</li>
+        </ul>
+        <div class="callout callout-info">
+          We do <strong>not</strong> use your data for advertising, profiling for third-party purposes, or sale to data brokers.
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="terms-section" id="s3">
+        <span class="section-number">Section 03</span>
+        <h2 class="section-h2">3. Data Sharing and Disclosure</h2>
+        <div class="callout callout-success">
+          <p class="callout-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Our Commitment
+          </p>
+          We do <strong>not</strong> sell your personal data. Period.
+        </div>
+        <p>We may share information only in the following circumstances:</p>
+        <ul class="terms-list">
+          <li>With service providers that help us operate the Service (see Section 6 for specific providers)</li>
+          <li>If required by law, court order, or binding legal process</li>
+          <li>To protect the rights, safety, and integrity of the Service and its users</li>
+        </ul>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="terms-section" id="s4">
+        <span class="section-number">Section 04</span>
+        <h2 class="section-h2">4. Data Storage and Security</h2>
+        <p>
+          We implement reasonable technical and organizational measures to protect your data from unauthorized access, loss,
+          or misuse. These measures include, but are not limited to: encrypted storage of sensitive tokens, hashed passwords,
+          and access-controlled infrastructure.
+        </p>
+        <div class="callout callout-warning">
+          <p class="callout-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Security Limitation
+          </p>
+          No system is completely secure. While we take every reasonable precaution, we cannot guarantee absolute security against all possible threats.
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="terms-section" id="s5">
+        <span class="section-number">Section 05</span>
+        <h2 class="section-h2">5. Data Retention (Specific Periods)</h2>
+        <p>Where possible, RAAMP uses specific, defined retention periods:</p>
+
+        <table class="retention-table" aria-label="Data retention periods">
+          <thead>
+            <tr>
+              <th>Data Type</th>
+              <th>Retention Period</th>
+              <th>Trigger for Deletion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="data-type">Account data</td>
+              <td class="period">Active account lifetime + 30 days</td>
+              <td>Verified deletion request</td>
+            </tr>
+            <tr>
+              <td class="data-type">Integration tokens</td>
+              <td class="period">While integration is connected</td>
+              <td>Disconnect or deletion request</td>
+            </tr>
+            <tr>
+              <td class="data-type">Webhook / audit records (e.g., auto-reply logs)</td>
+              <td class="period">Up to 90 days</td>
+              <td>Automatic expiry</td>
+            </tr>
+            <tr>
+              <td class="data-type">Operational logs</td>
+              <td class="period">Up to 30 days</td>
+              <td>Automatic expiry</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout-info">
+          Some limited information may be retained beyond these periods where required for security, fraud prevention, or legal compliance.
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="terms-section" id="s6">
+        <span class="section-number">Section 06</span>
+        <h2 class="section-h2">6. Third-Party Services (Actual Providers)</h2>
+        <p>
+          RAAMP integrates with third-party services to operate the platform. Depending on the features you have enabled,
+          this may include the following providers. Each has its own independent privacy policy.
+        </p>
+
+        <div class="provider-grid">
+          <div class="provider-card">
+            <div class="provider-tag">Social / Webhooks</div>
+            <p class="provider-name">Meta Platforms, Inc.</p>
+            <p class="provider-desc">Facebook/Instagram Graph API &amp; Webhooks — receives comment events and posts replies when enabled.</p>
+          </div>
+          <div class="provider-card">
+            <div class="provider-tag">AI</div>
+            <p class="provider-name">OpenAI</p>
+            <p class="provider-desc">AI text generation and analysis, used when AI-powered response features are enabled.</p>
+          </div>
+          <div class="provider-card">
+            <div class="provider-tag">AI / Vector DB</div>
+            <p class="provider-name">Pinecone</p>
+            <p class="provider-desc">Vector database used for retrieval-augmented features when enabled.</p>
+          </div>
+          <div class="provider-card">
+            <div class="provider-tag">Media</div>
+            <p class="provider-name">Cloudinary</p>
+            <p class="provider-desc">Media storage and processing used when media-related features are enabled.</p>
+          </div>
+          <div class="provider-card">
+            <div class="provider-tag">Database</div>
+            <p class="provider-name">MongoDB</p>
+            <p class="provider-desc">Primary database storage for user accounts, integrations, and application data.</p>
+          </div>
+          <div class="provider-card">
+            <div class="provider-tag dev">Dev / Testing Only</div>
+            <p class="provider-name">ngrok</p>
+            <p class="provider-desc">Webhook tunnel used exclusively for local development and testing. Not used in production.</p>
+          </div>
+        </div>
+
+        <p style="margin-top:1rem;">
+          We are not responsible for the data practices of these third-party providers. We encourage you to review their
+          respective privacy policies.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="terms-section" id="s7">
+        <span class="section-number">Section 07</span>
+        <h2 class="section-h2">7. Your Rights (Access / Deletion)</h2>
+        <p>You have the following rights with respect to your personal data:</p>
+
+        <div class="rights-row">
+          <span class="right-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Access your data
+          </span>
+          <span class="right-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
+            Request deletion
+          </span>
+          <span class="right-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Correct inaccuracies
+          </span>
+          <span class="right-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Disconnect integrations
+          </span>
+        </div>
+
+        <p>
+          To request access to your data or to delete your RAAMP account and associated data, please contact us at
+          <a href="mailto:malik.noor.eman@gmail.com" style="color:var(--primary);text-decoration:none;font-weight:500;">malik.noor.eman@gmail.com</a>
+          or follow the data deletion instructions linked from your account settings.
+        </p>
+        <div class="callout callout-info">
+          Account deletion requests are processed within <strong>30 days</strong> of verified receipt.
+        </div>
+      </section>
+
+      <!-- Section 8 -->
+      <section class="terms-section" id="s8">
+        <span class="section-number">Section 08</span>
+        <h2 class="section-h2">8. Children's Privacy</h2>
+        <p>
+          RAAMP is not intended for individuals under the age of <strong style="color:var(--foreground)">13</strong>.
+          We do not knowingly collect personal data from children. If you believe a child has provided us with personal
+          data, please contact us immediately and we will take steps to delete such information.
+        </p>
+      </section>
+
+      <!-- Section 9 -->
+      <section class="terms-section" id="s9">
+        <span class="section-number">Section 09</span>
+        <h2 class="section-h2">9. Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. When we do, we will revise the <strong style="color:var(--foreground)">Effective Date</strong>
+          at the top of this page. We encourage you to review this page periodically to stay informed about how we protect your data.
+        </p>
+        <p>
+          Continued use of the Service following the posting of changes constitutes your acceptance of the updated policy.
+        </p>
+      </section>
+
+      <!-- Section 10 -->
+      <section class="terms-section" id="s10">
+        <span class="section-number">Section 10</span>
+        <h2 class="section-h2">10. Contact</h2>
+        <p>For privacy questions, data access requests, or deletion requests, please contact us:</p>
+        <div class="contact-box">
+          <p class="label">RAAMP Privacy Contact</p>
+          <p>Email: <a href="mailto:malik.noor.eman@gmail.com">malik.noor.eman@gmail.com</a></p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <div class="terms-footer">
+        <p>
+          This Privacy Policy is effective as of <strong>21 April 2026</strong>. By using RAAMP,
+          you acknowledge that you have read and understood this policy.
+        </p>
+      </div>
+
+    </article>
+
+    <!-- Back to Top -->
+    <div class="back-top-wrap">
+      <button id="backToTop" type="button" aria-label="Scroll back to top">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"/>
+        </svg>
+        Back to Top
+      </button>
+    </div>
+
+  </main>
+
+  <script>
+    /* ── Reading Progress Bar ──────────────────────────────────────────── */
+    const bar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      bar.style.width = pct + '%';
+    }, { passive: true });
+
+    /* ── Back to Top ───────────────────────────────────────────────────── */
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ── Intersection Observer for Section Reveal ──────────────────────── */
+    const sections = document.querySelectorAll('.terms-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    sections.forEach((s, i) => {
+      s.style.transitionDelay = `${i * 0.04}s`;
+      observer.observe(s);
+    });
+
+    /* ── Smooth scroll for ToC links ───────────────────────────────────── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
